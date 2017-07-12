@@ -22,5 +22,10 @@ router.delete('/books/:id/delete', (req,res,next) => {
     res.json(response);
   });
 });
+router.put('/books/:id/edit', (req,res,next) => {
+  queries.editBook(req.params.id, req.body).then(book => {
+    res.json(book[0]);
+  })
+})
 
 module.exports = router;

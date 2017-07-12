@@ -12,5 +12,8 @@ module.exports = {
 	},
   deleteBook(id) {
     return knex('book').where('id', id).del();
+  },
+  editBook(id, books) {
+    return knex('book').where('id', id).update(books, '*')
   }
 }

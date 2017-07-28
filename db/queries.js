@@ -20,6 +20,9 @@ module.exports = {
   },
   editBook(id, books) {
     return knex('book').where('id', id).update(books, '*')
+  },
+  getAllAuthors() {
+    return knex('author')
   }
 }
 

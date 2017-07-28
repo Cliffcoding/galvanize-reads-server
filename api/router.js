@@ -54,5 +54,10 @@ router.put('/books/:id/edit', (req,res,next) => {
     res.json(book[0]);
   })
 })
+router.get('/authors', (req,res,next) =>{
+  queries.getAllAuthors().then(authors => {
+    res.json(authors)
+  })
+})
 
 module.exports = router;
